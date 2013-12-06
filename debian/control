@@ -1,0 +1,13 @@
+Source: vx-desktop-theme
+Section: gnome
+Priority: extra
+Maintainer: Jose Antonio Chavarría <jachavar@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: https://github.com/vitalinux/vx-desktop-theme
+
+Package: vx-desktop-theme
+Architecture: all
+Depends: ${misc:Depends}, vx-desktop-icons
+Description: Vitalinux themes for gnome and openbox desktops
+ Green variation of Ubuntu Radiance theme & metacity Equinox Theme
