@@ -1,3 +1,11 @@
+vx-desktop-theme (1.1-1) unstable; urgency=low
+
+  * Se parte del tema Ambiance y se hace el borde de las ventanas de Metacity
+    más grueso para favorecer la usabilidad (closes #1).
+  * Se elimina el tema anterior.
+
+ -- Jose Antonio Chavarría <jachavar@gmail.com>  Thu, 26 Dec 2013 12:41:17 +0200
+
 vx-desktop-theme (1.0-1) unstable; urgency=low
 
   * Se incluyen los temas para Gtk, metacity y openbox.
