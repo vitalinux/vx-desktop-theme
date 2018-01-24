@@ -9,4 +9,5 @@ GtkTheme=Vitalinux
 MetacityTheme=Vitalinux
 IconTheme=ubuntu-mono-dark
 CursorTheme=DMZ-White
-ButtonLayout=menu:minimize,maximize,spacer,close
+ButtonLayout=close,minimize,maximize:
+X-Ubuntu-UseOverlayScrollbars=false

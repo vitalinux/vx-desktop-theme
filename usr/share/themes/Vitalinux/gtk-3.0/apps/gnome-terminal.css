@@ -1,114 +1,62 @@
 /* gnome-terminal */
+@define-color terminal_bg #300a24;
+
 TerminalScreen {
     -TerminalScreen-background-darkness: 0.95;
-
-    background-color: #300a24;
-
+    background-color: @terminal_bg;
     color: #fff;
 }
 
-/*
-TerminalWindow,
-TerminalWindow.background {
+TerminalScreenContainer .scrollbar:hover:not(.slider),
+TerminalScreenContainer .scrollbar.dragging:not(.slider) {
+    background-color: alpha(@scrollbar_track_color, 0.4);
+}
+
+/* Since .hovering class is not working here, we always use the same radius */
+TerminalScreenContainer .scrollbar.slider.hovering,
+TerminalScreenContainer .scrollbar.slider.dragging {
+    border-radius: 1px;
+}
+
+TerminalScreenContainer .scrollbar {
+    background-color: transparent;
+}
+
+TerminalNotebook.notebook.header {
     background-color: @dark_bg_color;
-
-    color: @dark_fg_color;
-}
-*/
-/* notebook */
-/*
-TerminalWindow .notebook {
-    background-image: none;
-    background-color: shade (@dark_bg_color, 1.02);
-    border-radius: 3;
-
-    -unico-border-gradient: -gtk-gradient (linear, left top, right top,
-                                           from (shade (@dark_bg_color, 0.93)),
-                                           to (shade (@dark_bg_color, 0.93)));
-    -unico-inner-stroke-width: 0;
-    -unico-outer-stroke-width: 0;
+    border: none;
 }
 
-TerminalWindow .notebook tab {
-    background-image: -gtk-gradient (linear, left top, left bottom,
-                                     from (shade (@dark_bg_color, 0.92)),
-                                     color-stop (0.60, shade (@dark_bg_color, 0.9)),
-                                     to (shade (@dark_bg_color, 0.85)));                   
-    padding: 0;
 
-    color: @dark_fg_color;
-
-    -unico-inner-stroke-color: alpha (shade (@dark_bg_color, 1.26), 0.2);
+TerminalNotebook.notebook tab.top {
+    background-color: shade(@bg_color, 0.7);
+    border-width: 1px 1px 0px 1px;
+    border-radius:  8px 8px 0px 0px;
+    border-image: none;
+    border-style: solid;
+    border-color: @dark_bg_color;
 }
 
-TerminalWindow .notebook tab:active {
-    background-image: -gtk-gradient (linear, left top, left bottom,
-                                     from (shade (@dark_bg_color, 1.2)),
-                                     to (shade (@dark_bg_color, 1.12)));
-
-    -unico-inner-stroke-color: alpha (shade (@dark_bg_color, 1.26), 1.0);
+TerminalNotebook.notebook tab.top:active {
+    background-color: @bg_color;
+    border-image: none;
 }
 
-TerminalWindow .notebook .button,
-TerminalWindow .notebook .button:active  {
-    background-image: -gtk-gradient (linear, left top, right top,
-                                    from (shade (@dark_bg_color, 1.08)),
-                                    to (shade (@dark_bg_color, 0.92)));
-
-    -unico-border-gradient: -gtk-gradient (linear, left top, right top,
-                                           from (shade (@dark_bg_color, 0.9)),
-                                           to (shade (@dark_bg_color, 0.9)));                                          
-    -unico-inner-stroke-color: alpha (shade (@dark_bg_color, 1.26), 0.7);
-    -unico-outer-stroke-style: none;
-}
-*/
-/* Scrollbars */
-/*
-TerminalWindow .scrollbar {
-    border-radius:  20;
-
-    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
-                                           from (shade (@dark_bg_color, 0.74)),
-                                           to (shade (@dark_bg_color, 0.74)));
+TerminalNotebook.notebook tab .button {
+    background-color: transparent;
+    padding: 1px;
 }
 
-TerminalWindow .scrollbar.trough {
-    background-image: -gtk-gradient (linear, left top, right top,
-                                    from (shade (@dark_bg_color, 0.9)),
-                                    to (shade (@dark_bg_color, 0.95)));
+/* Match the actions bar.  This is a hack and should be fixed in 3.20 */
+TerminalNotebook GtkBox.vertical {
+    background-color: transparent;
 }
 
-TerminalWindow .scrollbar.trough.horizontal {
-    background-image: -gtk-gradient (linear, left top, left bottom,
-                                    from (shade (@dark_bg_color, 0.9)),
-                                    to (shade (@dark_bg_color, 0.95)));
+.background TerminalNotebook GtkBox.vertical .button {
+    border-image:none;
+    border-color: transparent;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 1px;
 }
 
-TerminalWindow .scrollbar.slider,
-TerminalWindow .scrollbar.slider:prelight,
-TerminalWindow .scrollbar.button,
-TerminalWindow .scrollbar.button:insensitive {                     
-    background-image: -gtk-gradient (linear, left top, right top,
-                                    from (shade (@dark_bg_color, 1.08)),
-                                    to (shade (@dark_bg_color, 0.92)));
-
-    -unico-border-gradient: -gtk-gradient (linear, left top, right top,
-                                           from (shade (@dark_bg_color, 0.74)),
-                                           to (shade (@dark_bg_color, 0.74)));                                          
-    -unico-inner-stroke-color: alpha (shade (@dark_bg_color, 1.26), 0.7);
-}
-
-TerminalWindow .scrollbar.slider.horizontal,
-TerminalWindow .scrollbar.slider.horizontal:prelight,
-TerminalWindow .scrollbar.button.horizontal,
-TerminalWindow .scrollbar.button:insensitive {                                   
-    background-image: -gtk-gradient (linear, left top, left bottom,
-                                    from (shade (@dark_bg_color, 1.08)),
-                                    to (shade (@dark_bg_color, 0.92)));
-
-    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
-                                           from (shade (@dark_bg_color, 0.74)),
-                                           to (shade (@dark_bg_color, 0.74)));                                   
-    -unico-inner-stroke-color: alpha (shade (@dark_bg_color, 1.26), 0.7);
-}
-*/
